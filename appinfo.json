@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "remonasebi@gmail.com",
+    "longName": "steins",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "steins",
+    "uuid": "2985e46a-c483-4649-aad5-64746100af14",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
