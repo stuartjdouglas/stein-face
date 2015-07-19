@@ -9,9 +9,14 @@
     "resources": {
         "media": [
             {
+                "file": "data/gatcha.pdc",
+                "name": "IMAGE_GATCHA",
+                "type": "raw"
+            },
+            {
                 "characterRegex": "[0-9:.]",
                 "file": "fonts/NixieOne.ttf",
-                "name": "nixie_30",
+                "name": "nixie_45",
                 "type": "font"
             }
         ]
