@@ -24,7 +24,6 @@
     "sdkVersion": "3",
     "shortName": "steins",
     "targetPlatforms": [
-        "aplite",
         "basalt"
     ],
     "uuid": "2985e46a-c483-4649-aad5-64746100af14",
