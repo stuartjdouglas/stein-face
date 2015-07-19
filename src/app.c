@@ -21,7 +21,7 @@ static GDrawCommandImage *s_command_image;
 //   .points = (GPoint []) {{120, 10}, {20, 46}, {40, 50}, {50, 115}}
 // };
 
-static void layer_update_proc(Layer *layer, GContext *ctx) {
+static void update_proc(Layer *layer, GContext *ctx) {
   // Set the color using RGB values
 
 
@@ -70,17 +70,19 @@ static void main_window_load(Window *window) {
   //tick_timer_service_subscribe(TimeUnits tick_units, TickHandler handler);
 
 
-  s_command_image = gdraw_command_image_create_with_resource(RESOURCE_ID_IMAGE_GATCHA);
-    if (!s_command_image) {
-      APP_LOG(APP_LOG_LEVEL_ERROR, "Image is NULL!");
-    }
+   
+  GRect bounds = layer_get_bounds(window_layer);
 
-    GRect image_layer_bounds = GRect(0, 0, window_bounds.size.w, window_bounds.size.h);
-    gdraw_command_image_set_bounds_size(s_command_image, GSize(1000,1000));
+  // Load the image and check it was succcessful
+  s_command_image = gdraw_command_image_create_with_resource(RESOURCE_ID_IMAGE_GATCHA);
+  if (!s_command_image) {
+    APP_LOG(APP_LOG_LEVEL_ERROR, "Image is NULL!");
+  }
+
   // Create canvas Layer and set up the update procedure
-    s_canvas_layer = layer_create(image_layer_bounds);
-    layer_set_update_proc(s_canvas_layer, layer_update_proc);
-    layer_add_child(window_layer, s_canvas_layer);
+  s_canvas_layer = layer_create(bounds);
+  layer_set_update_proc(s_canvas_layer, update_proc);
+  layer_add_child(window_layer, s_canvas_layer);
 
 
 
